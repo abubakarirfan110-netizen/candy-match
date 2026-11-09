@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#25145b">
+    <meta name="description" content="A colorful, cozy match-three candy puzzle adventure.">
+    <title>Candy Match — Sweeten your day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/responsive.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="menu-screen" class="screen menu-screen" aria-labelledby="game-title">
+        <button id="sound-toggle" class="icon-button sound-toggle" type="button" aria-label="Turn sound off">♫</button>
+        <div class="menu-content">
+          <div class="brand-mark" aria-hidden="true"><span>✦</span><span>🍬</span><span>✦</span></div>
+          <p class="eyebrow">A little sweetness goes a long way</p>
+          <h1 id="game-title">Candy<br><span>Match</span></h1>
+          <p class="menu-copy">Swap, match, and make your way through a world of treats.</p>
+          <button class="button button-primary button-play" data-action="play" type="button">Let’s play <span aria-hidden="true">→</span></button>
+          <button class="button button-quiet" data-action="levels" type="button">Choose a level</button>
+        </div>
+        <div class="orbit orbit-one" aria-hidden="true">🍭</div>
+        <div class="orbit orbit-two" aria-hidden="true">🍡</div>
+        <div class="orbit orbit-three" aria-hidden="true">🍬</div>
+        <p class="menu-footer">Made with a little bit of magic ✨</p>
+      </section>
+
+      <section id="levels-screen" class="screen levels-screen is-hidden" aria-labelledby="levels-title">
+        <header class="subscreen-header">
+          <button class="icon-button" data-action="menu" type="button" aria-label="Back to main menu">←</button>
+          <div><p class="eyebrow">Your sweet adventure</p><h2 id="levels-title">Pick a level</h2></div>
+          <span class="header-sparkle" aria-hidden="true">✦</span>
+        </header>
+        <div id="level-grid" class="level-grid" aria-label="Level selection"></div>
+        <p class="level-hint">Complete a level to unlock the next one.</p>
+      </section>
+
+      <section id="game-screen" class="screen game-screen is-hidden" aria-label="Candy Match game">
+        <header class="game-header">
+          <button class="icon-button game-back" data-action="menu" type="button" aria-label="Main menu">⌂</button>
+          <div class="level-label"><span class="eyebrow">Sweet adventure</span><strong id="current-level">Level 1</strong></div>
+          <button class="icon-button" data-action="pause" type="button" aria-label="Pause game">Ⅱ</button>
+        </header>
+        <div class="score-panel">
+          <div class="score-card"><span class="stat-label">SCORE</span><strong id="score-value">0</strong></div>
+          <div class="target-card"><span class="target-icon" aria-hidden="true">★</span><div><span class="stat-label">TARGET</span><strong id="target-value">1,000</strong></div></div>
+          <div class="moves-card"><span class="stat-label">MOVES</span><strong id="moves-value">20</strong></div>
+        </div>
+        <div class="progress-track" aria-label="Target progress"><div id="score-progress" class="progress-fill"></div></div>
+        <div class="board-wrap">
+          <div id="game-board" class="game-board" role="grid" aria-label="8 by 8 candy board"></div>
+          <div id="board-status" class="sr-only" aria-live="polite"></div>
+        </div>
+        <p class="game-tip">Match 3 or more candies to score!</p>
+        <div class="game-actions">
+          <button class="button button-small button-soft" data-action="restart" type="button">↻ <span>Restart</span></button>
+          <button class="button button-small button-soft" data-action="sound" type="button"><span id="game-sound-icon">♫</span> <span>Sound</span></button>
+        </div>
+      </section>
+
+      <div id="modal-layer" class="modal-layer is-hidden" role="presentation">
+        <section id="pause-modal" class="modal-card is-hidden" role="dialog" aria-modal="true" aria-labelledby="pause-title">
+          <span class="modal-icon" aria-hidden="true">⏸</span>
+          <p class="eyebrow">Take your time</p><h2 id="pause-title">Game paused</h2>
+          <p>Your candies will be right here.</p>
+          <button class="button button-primary" data-action="resume" type="button">Keep playing</button>
+          <button class="button button-quiet" data-action="restart" type="button">Restart level</button>
+          <button class="button button-quiet" data-action="menu" type="button">Main menu</button>
+        </section>
+        <section id="result-modal" class="modal-card result-card is-hidden" role="dialog" aria-modal="true" aria-labelledby="result-title">
+          <span id="result-icon" class="modal-icon" aria-hidden="true">🍭</span>
+          <p id="result-eyebrow" class="eyebrow">Sweet success!</p><h2 id="result-title">Level complete!</h2>
+          <div id="star-rating" class="star-rating" aria-label="Three stars">★★★</div>
+          <p id="result-copy">You made the sweetest matches.</p>
+          <button id="result-primary" class="button button-primary" data-action="next" type="button">Next level <span aria-hidden="true">→</span></button>
+          <button class="button button-quiet" data-action="menu" type="button">Main menu</button>
+        </section>
+      </div>
+    </main>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

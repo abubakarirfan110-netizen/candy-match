@@ -1,0 +1,27 @@
+@media (max-width: 520px) {
+  .menu-screen { padding-inline: 20px; }
+  .menu-content h1 { font-size: clamp(4.3rem, 23vw, 6rem); }
+  .orbit-one { top: 20%; left: 3%; width: 62px; height: 62px; font-size: 2rem; }
+  .orbit-two { top: 27%; right: 3%; width: 62px; height: 62px; font-size: 2rem; }
+  .orbit-three { right: 8%; bottom: 17%; width: 52px; height: 52px; }
+  .level-grid { gap: 10px; }
+  .level-tile { min-height: 83px; border-radius: 19px; }
+  .level-number { font-size: 1.4rem; }
+  .game-screen { padding: 14px 12px 22px; }
+  .score-panel { gap: 6px; margin-top: 16px; }
+  .score-card, .target-card, .moves-card { min-height: 62px; border-radius: 15px; }
+  .board-wrap { padding: 6px; border-radius: 15px; }
+  .board-cell { border-radius: 8px; }
+  .candy { font-size: clamp(.7rem, 5vw, 1.4rem); }
+}
+
+@media (max-height: 700px) and (min-width: 521px) {
+  .game-screen { padding-block: 10px; }
+  .score-panel { margin-block: 12px 8px; }
+  .board-wrap { width: min(66vh, 490px); margin-top: 10px; }
+  .game-tip { margin-block: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
